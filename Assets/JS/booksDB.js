@@ -123,9 +123,9 @@ function createSubscriberTable(currentPage)
 							  		+"<td>"+n+"</td>"
 								  	+"<td>"+p+"</td>"
 								  	+"<td>"
-								  	+"<button id=editbtn_"+i+" class='btn editBtn '"
+								  	/*+"<button id=editbtn_"+i+" class='btn editBtn '"
 								  	+"data-toggle='modal'"
-								 	+"data-target='#editModal'><i class='fa fa-edit'></i></button>"
+								 	+"data-target='#editModal'><i class='fa fa-edit'></i></button>"*/
 								  	+"<button id=deletebtn_"+i+" class='btn deleteBtn' data-toggle='modal' data-target='#deleteModal'><i class='fa fa-trash'></i></button></td>";
 								  	+"</tr>";
 				}
@@ -136,9 +136,9 @@ function createSubscriberTable(currentPage)
 							  		+"<td>"+n+"</td>"
 								  	+"<td>"+p+"</td>"
 								  	+"<td>"
-								  	+"<button id=editbtn_"+i+" class='btn editBtn '"
+								  	/*+"<button id=editbtn_"+i+" class='btn editBtn '"
 								  	+"data-toggle='modal'"
-								 	+"data-target='#editModal'><i class='fa fa-edit'></i></button>"
+								 	+"data-target='#editModal'><i class='fa fa-edit'></i></button>"*/
 								  	+"<button id=deletebtn_"+i+" class='btn deleteBtn' data-toggle='modal' data-target='#deleteModal'><i class='fa fa-trash'></i></button></td>";
 								  	+"</tr>";
 				}
@@ -218,9 +218,9 @@ function addSubscriber()
 				  		+"<td>"+SubscriberName+"</td>"
 					  	+"<td>"+SubscriberNumber+"</td>"
 					  	+"<td>"
-					  	+"<button id=editbtn_"+(newRowCount-1)+" class='btn editBtn'"
+					  	/*+"<button id=editbtn_"+(newRowCount-1)+" class='btn editBtn'"
 					  	+"data-toggle='modal'"
-					 	+"data-target='#editModal'><i class='fa fa-edit'></i></button>"
+					 	+"data-target='#editModal'><i class='fa fa-edit'></i></button>"*/
 					  	+"<button id=deletebtn_"+(newRowCount-1)+" class='btn deleteBtn' data-toggle='modal' data-target='#deleteModal'><i class='fa fa-trash'></i>"
 					  	+"</button></td>"
 					  	+"</tr>");
@@ -271,7 +271,7 @@ function validateRegEx(element, value, regex)
 		return result;
 }
 
-$('#editModal').on('show.bs.modal', function (e) 
+/*$('#editModal').on('show.bs.modal', function (e) 
 {
 	var button,objID;
 	var SubscriberNumber,SubscriberName;
@@ -313,7 +313,7 @@ $('#editModal').on('show.bs.modal', function (e)
   			$('#editModal').modal('hide');
 		}
 	}//onclick ends here
-});
+});*/
 
 $('#deleteModal').on('show.bs.modal', function (e) {
 	button=e.relatedTarget ;
