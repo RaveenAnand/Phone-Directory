@@ -1,0 +1,104 @@
+
+nav#mainNavbar{
+		background-color: #007bffa3;}
+.navbar-brand
+{
+	font-weight: bolder;
+}
+div#collapseContents>ul>li.nav-item>a.nav-link{
+	font-weight: bolder;
+	color: white;
+}
+section#infoSection{
+	margin-top:20px!important;
+	margin:10px;
+	margin-bottom: 30px!important;
+	/**border-bottom: 5px solid #dae0e5;**/
+}
+div.elementHeader{
+	color: #6c757d!important;
+    font-weight: bolder;
+    padding-bottom: 10px;
+}
+span#taskName{
+	color:#17a2b8!important;
+}
+span#taskDetails{
+	color:grey!important;
+}
+.highlight{
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #d1ecf19c;
+    border: 2px solid #dae0e5;
+}
+#subscribersTable thead th{
+	background-color: #495057!important;
+	padding:.50rem;
+	border-right: 1px solid grey;
+}
+#subscribersTable td{
+	padding: .30rem!important;
+	vertical-align: 0;
+}
+.editBtn, .deleteBtn{
+	background-color: white;
+	padding-left:0;
+	}
+.editBtn.focus, .editBtn:focus ,.deleteBtn.focus, .deleteBtn:focus{
+    box-shadow:none!important 
+	}
+.editBtn:hover{color:blue;}
+.deleteBtn:hover{color:red;}
+.fa-edit,.fa-trash{font-size: 20px!important;}
+.form-group{
+	position:relative;
+}
+.hideit{display: none!important;}
+
+.sortIcon{
+	display: none;
+	position: absolute;
+	padding-left:10px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {  }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	nav#mainNavbar{
+		padding: 0px 10px!important;
+		background-color: #007bffa3;
+		border-bottom: 5px solid #dae0e5;
+	}
+	div#collapseContents, div#collapseContents>ul.navbar-nav{
+		width: 100%;
+	}
+	div#collapseContents>ul>li.nav-item>a.nav-link{
+		padding:15px 15px;
+		
+	}
+	div#collapseContents>ul>li.nav-item.active{
+		background-color: white;
+		border: 5px solid #e9ecef;
+    	border-bottom: 0;
+		margin-bottom: -5px;/**-ve eual of the border bottom of nav**/
+	}
+	div#collapseContents>ul>li.nav-item.active>a.nav-link.active{
+		color: #5CABFF;
+    	font-weight: bold;
+    	padding: 10px 15px!important;/**removes the 5px top padding that misaligns the text, cz we have given top border to it paremt li***/
+	}
+	
+  }
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+
+
+}
