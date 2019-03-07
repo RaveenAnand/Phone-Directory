@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phone-Directory</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="Assets/CSS/taskCSS.css">
+		<!--Fonts-->
+    	<link rel="stylesheet" media="screen" href="Assets/fonts/font-awesome/font-awesome.min.css">
+    	<link rel="stylesheet" media="screen" href="Assets/fonts/simple-line-icons.css"> 
+		
+	</head>
+	<body>
+		<!--******************Navigation STARTS***********************-->
+		<nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar" >
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" 
+			 
+			  			data-target="#collapseContents" aria-controls="collapseContents" 
+			  			aria-expanded="false" aria-label="Toggle navigation">
+			    		<span class="navbar-toggler-icon"></span>
+			</button>  
+			<a class="navbar-brand" href="#">UpGrad ASSIGNMENT</a>			
+
+	  		<div class="collapse navbar-collapse justify-content-end" id="collapseContents">
+	    		<ul class="navbar-nav justify-content-end">
+		      		<li class="nav-item active">
+		        		<a class="nav-link active" href="BookDB.html">Task 1<span class="sr-only">(current)</span></a>
+		      		</li>
+		      		<!-- <li class="nav-item">
+		      				        		<a class="nav-link" href="Gallery.html">Task 2</a>
+		      		</li>
+		      		<li class="nav-item">
+		      				        		<a class="nav-link" href="task.html">Task 3</a>
+		      		</li>
+		      		<li class="nav-item">
+		      				        		<a class="nav-link" href="contact.html">Contact US</a>
+		      		</li> -->
+	    		</ul>
+			    <!--<form class="form-inline my-2 my-lg-0">
+			      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			    </form>-->
+	  		</div>
+		</nav>
+		<!--*******************Navigation ENDS********************-->
+
+		<!--****************INFO section***************-->
+		<section id="infoSection" class="container m-auto"  >
+			<div class="row highlight">
+				<div class="col text-center">
+					<span id="taskName"><b>PHONE DIRECTORY USING HTML, CSS, BOOTSTRAP ,JS</b></span>
+					<!--<span id="taskDetails">Create a form with validation to add items and show them in a table. Add 'Edit & Delete' buttons in a column for every row in the table. On click of the buttons open modal popups for respective rows using bootstrap.
+					</span>-->
+				</div>
+			</div>
+		</section>
+
+		<!--***************MAIN CONTENT*************************-->
+		<div id="mainContent" class="container pl-0 pr-0">
+			<div class="row">
+				<div class="col-sm-3">
+					<!--ADD Subscriber-->
+					<div class="elementHeader">ADD SUBSCRIBER</div>
+					
+					<form name="subscriberForm" class="needs-validation" novalidate onsubmit="return addSubscriber()" >
+					  <div class="form-group">
+					    <!--<label for="inputname"></label>-->
+					    <input type="text" class="form-control" id="inputSubscriberName"  placeholder="Enter Subscriber's Name">
+					    <div class="invalid-feedback">
+        					Cannot be left Blank.
+      					</div>
+					  </div>
+					  <div class="form-group">
+					    <!--<label for="inputnumber"></label>-->
+					    <input type="text" class="form-control" id="inputSubscriberNumber"  placeholder="Enter Phone Number">
+					    <div class="invalid-feedback">
+        					Cannot be left Blank.
+      					</div>
+					  </div>
+					  
+	  				  <button type="submit" class="btn btn-primary" >Submit</button>
+					</form>
+				</div>
+				<div class="col-sm-9" class="tableNpagiDIV">
+					<!--SUBSCRIBERS TABLE-->
+					<div class="elementHeader">SUBSCRIBERS</div>
+					
+					<table id="subscribersTable" class="table table-hover">
+					  <thead class="thead-dark">
+					    <tr>
+					      		<th id="srnoTH" onclick="sortTable(this);"">
+					      		S.No.<span class="sortIcon"><i class="  fa fa-sort"></i></span>
+								</th>
+								<th id="titleTH" onclick="sortTable(this);">Name<span class="sortIcon"><i class="fa fa-sort"></i></span></th>
+								<th id="AuthorTH" onclick="sortTable(this);">Phone Number<span class="sortIcon"><i class="fa fa-sort"></i></span></i>
+								</th>
+								<th>Action</th>
+
+					    </tr>
+					  </thead>
+					  <tbody id="tblBody">
+						
+					  </tbody>
+					</table>
+					<div>
+					<nav id="paginationNAV" class="hideit" aria-label="Page navigation example ">
+								  		<ul id="paginationUL" class="pagination justify-content-end""></ul>
+					</nav>
+					</div>
+				</div><!--col-sm-9-->
+			</div>
+		</div>
+			
+			<!--********modal here**********-->
+
+		<!-- Edit Modal -->
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Book Edit Form</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		    
+		      <div id="editModalBody" class="modal-body">
+		         <form id="subscriberEditFrm" class="needs-validation" novalidate >   <!--method="post"-->
+					<div class="form-group">
+						<label>Title:</label>
+						<input  type="text" class="form-control" name="title">
+						<div class="invalid-feedback">Cannot be left Blank.</div>
+					</div>
+					<div class="form-group">
+						<label>Author:</label>
+						<input  type="text" class="form-control" name="author">
+						<div class="invalid-feedback">Cannot be left Blank.</div>
+				    </div>
+					<div class="form-group">
+						<label>Price:</label>
+						<input  type="text" class="form-control"  name="price">
+						<div class="invalid-feedback">Cannot be left Blank.</div>
+					</div>
+					<div class="form-group">
+						<label>Edition:</label>
+						<input  type="text" class="form-control"  name="edition">
+						<div class="invalid-feedback">Cannot be left Blank.</div>
+					</div>
+					</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button id="saveModal" type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- Delete Modal -->
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		        <span>Delete Subscriber?</span>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" id="deleteButton" class="btn btn-primary">Yes</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="Assets/JS/booksDB.js"></script>
+	</body>
+</html>
