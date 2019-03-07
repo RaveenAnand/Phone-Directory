@@ -3,35 +3,31 @@ var subscriberObj=
 [
 			{
 				'name':'chetan Bhagat',
-				'phonenumber':'125'
-			},
-			{
-				'name':'Khaled Hosseni',
-				'phonenumber':'400'
+				'phonenumber':'2525457852'
 			},
 			{
 				'name':'Marley tim',
-				'phonenumber':'600'
+				'phonenumber':'2546892145'
 			},
 			{
 				'name':'Rhonda Bryne',
-				'phonenumber':'800'
+				'phonenumber':'9851236547'
 			},
 			{
 				'name':'Adil',
-				'phonenumber':'125'
+				'phonenumber':'521647852'
 			},
 			{
 				'name':'Khaled Hosseni',
-				'phonenumber':'400'
+				'phonenumber':'9854213658'
 			},
 			{
 				'name':'Marley tim',
-				'phonenumber':'600'
+				'phonenumber':'2125463258'
 			},
 			{
 				'name':'Raj Udha',
-				'phonenumber':'800'
+				'phonenumber':'8564521325'
 			},
 			
 ];
