@@ -18,14 +18,6 @@ var subscriberObj=
 				'phonenumber':'521647852'
 			},
 			{
-				'name':'Khaled Hosseni',
-				'phonenumber':'9854213658'
-			},
-			{
-				'name':'Marley tim',
-				'phonenumber':'2125463258'
-			},
-			{
 				'name':'Raj Udha',
 				'phonenumber':'8564521325'
 			},
