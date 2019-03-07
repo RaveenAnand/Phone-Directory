@@ -20,8 +20,7 @@ var subscriberObj=
 			{
 				'name':'Raj Udha',
 				'phonenumber':'8564521325'
-			},
-			
+			}	
 ];
 var recordLimitPerPage=5;
 window.onload=createSubscriberTable();
@@ -29,7 +28,7 @@ window.onload=createSubscriberTable();
 function calculateTotalPages(totalRecords) 
 {
 	var totalPages=1;
-	if(totalRecords>recordLimitPerPage)//if object has more than 5 records apply pagination
+	if(totalRecords>=recordLimitPerPage)//if object has more than 5 records apply pagination
 	{
 		totalPages=totalRecords/recordLimitPerPage;//calculate no of pages
 		if((totalPages.toString()).indexOf(".")==-1)//if there is no  decimal return as it is
